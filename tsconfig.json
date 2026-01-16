@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./",          // desde donde está tsconfig.json
+    "outDir": "../dist",      // genera JS en la carpeta Start2Impact/dist
+    "esModuleInterop": true,
+
+    // Environment Settings
+    "module": "CommonJS",
+    "target": "ES6",
+    "types": ["node"],
+    "lib": ["ESNext"],
+
+    // Outputs adicionales
+    "sourceMap": true,               
+    "declaration": true,
+    "declarationMap": true,
+
+    // Comprobaciones estrictas
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Opciones recomendadas
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": ["**/*.ts"],        // busca todos los TS dentro de esta carpeta y subcarpetas
+  "exclude": ["node_modules", "../dist"] 
+}
