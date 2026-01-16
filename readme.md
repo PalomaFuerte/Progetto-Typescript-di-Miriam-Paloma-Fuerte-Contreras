@@ -1,4 +1,4 @@
-# Progetto TypeScript - Sustainable Beachwear
+# Progetto TypeScript - SUNNEE Sustainable Beachwear
 
 ![Homepage Screenshot](img/miniatura.png)
 
@@ -9,7 +9,7 @@
 
 ## Descrizione del progetto
 
-Progetto TypeScript che modella la struttura operativa di un brand di beachwear sostenibile realizzato con plastica riciclata.  
+Progetto TypeScript che modella la struttura operativa di Sunnee un brand di beachwear sostenibile realizzato con plastica riciclata.  
 Il sistema rappresenta interazioni tra **clienti**, **prodotti** e **processi di produzione** tramite l’uso di interfacce e classi.
 
 ## Tecnologie utilizzate
