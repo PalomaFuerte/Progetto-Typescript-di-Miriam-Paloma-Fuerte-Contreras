@@ -20,5 +20,5 @@ cliente2.ordinaProdotto(costume);
 console.log(costume);
 console.log(pareo);
 console.log(processo1.prodottiInProduzione);
-console.log(processo2.prodottiInProduzione);
+
 

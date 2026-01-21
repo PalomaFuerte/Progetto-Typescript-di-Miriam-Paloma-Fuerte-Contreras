@@ -54,7 +54,7 @@ node dist/index.js
 ```
 
 In alternativa, puoi anche provare il progetto direttamente su CodePen (versione single-file TypeScript):
-<a href="https://codepen.io/PalomaFuerte/pen/azZJoLd" target="_blank">Visualizza su CodePen</a>
+[Visualizza su CodePen](https://codepen.io/PalomaFuerte/pen/azZJoLd)
 
 ## Contatti
 
