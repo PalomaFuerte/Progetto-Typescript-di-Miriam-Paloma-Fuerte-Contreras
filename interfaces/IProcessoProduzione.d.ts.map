@@ -1,1 +1,0 @@
-{"version":3,"file":"IProcessoProduzione.d.ts","sourceRoot":"","sources":["IProcessoProduzione.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAExC,MAAM,WAAW,mBAAmB;IAChC,YAAY,EAAE,MAAM,CAAC;IACrB,WAAW,EAAE,MAAM,CAAC;IACpB,oBAAoB,EAAE,SAAS,EAAE,CAAC;IAElC,gBAAgB,CAAC,QAAQ,EAAE,SAAS,GAAG,IAAI,CAAC;CAC/C"}

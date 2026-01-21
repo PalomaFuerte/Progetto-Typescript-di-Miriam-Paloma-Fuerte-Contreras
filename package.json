@@ -1,0 +1,17 @@
+{
+  "name": "progetto-typescript-di-miriam-paloma-fuerte-contreras",
+  "version": "1.0.0",
+  "description": "![Homepage Screenshot](img/miniatura.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "typescript": "^5.9.3"
+  }
+}

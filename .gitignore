@@ -1,6 +1,7 @@
+dist/
+node_modules/
 *.js
 *.js.map
+*.d.ts
 
-/dist
 
-node_modules/
