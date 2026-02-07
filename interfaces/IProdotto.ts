@@ -1,12 +1,11 @@
+import { Colore, statoProdotto, Taglia, tipoProdotto } from "../enum";
 import { ICliente } from "./ICliente";
 
 export interface IProdotto {
-    tipo: string;
-    readonly id: number;
-    taglia: string;
-    colore: string;
-    stato: string;
-
-    assegnaCliente(cliente: ICliente): void;
+  tipo: tipoProdotto;
+  readonly id: number;
+  taglia: Taglia;
+  colore: Colore;
+  stato: statoProdotto;
+  assegnaCliente(cliente: ICliente): void;
 }
-

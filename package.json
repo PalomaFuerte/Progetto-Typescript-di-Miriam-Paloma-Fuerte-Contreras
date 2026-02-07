@@ -2,8 +2,12 @@
   "name": "progetto-typescript-di-miriam-paloma-fuerte-contreras",
   "version": "1.0.0",
   "description": "![Homepage Screenshot](img/miniatura.png)",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' index.ts",
+    "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +16,9 @@
   "types": "./index.d.ts",
   "devDependencies": {
     "@types/node": "^25.0.9",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
 }
