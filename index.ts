@@ -3,7 +3,7 @@ import { Cliente } from "./models/Cliente";
 import { ProcessoProduzione } from "./models/ProcessoProduzione";
 import { metodoPagamento, tipoProdotto, Taglia, Colore } from "./enum";
 
-// --- Productos (tipado explícito) ---
+//Prodotti
 const prodotti: Prodotto[] = [
   new Prodotto(tipoProdotto.costume, 1, Taglia.S, Colore.rosso),
   new Prodotto(tipoProdotto.pareo, 2, Taglia.M, Colore.blu),
@@ -11,7 +11,7 @@ const prodotti: Prodotto[] = [
   new Prodotto(tipoProdotto.ciabatte, 4, Taglia.L, Colore.verde),
 ];
 
-// --- Clientes (tipado explícito) ---
+//Clienti
 const clienti: Cliente[] = [
   new Cliente(
     "Paloma",
@@ -30,7 +30,7 @@ const clienti: Cliente[] = [
   new Cliente("Giulia", "Neri", "giulia@gmail.com", metodoPagamento.applepay),
 ];
 
-// --- Procesos (tipado explícito) ---
+//Processi
 const processi: ProcessoProduzione[] = [
   new ProcessoProduzione(
     "Fusione e trasformazione in filato",
@@ -42,7 +42,7 @@ const processi: ProcessoProduzione[] = [
   ),
 ];
 
-// --- Asignar productos a procesos con manejo de errores ---
+// asseganzione
 try {
   processi[0]!.aggiungiProdotto(prodotti[0]!); // Prodotto 1 al proceso 1
 } catch (error) {
@@ -56,7 +56,7 @@ try {
   console.log((error as Error).message);
 }
 
-// --- Función de orden con manejo de errores ---
+// --- errore
 function ordina(cliente: Cliente, prodotto: Prodotto): void {
   try {
     cliente.ordinaProdotto(prodotto);
@@ -70,20 +70,20 @@ function ordina(cliente: Cliente, prodotto: Prodotto): void {
   }
 }
 
-// --- Simular órdenes ---
-ordina(clienti[0]!, prodotti[0]!); // Paloma ordena Prodotto 1
-ordina(clienti[1]!, prodotti[0]!); // Davide intenta el mismo producto
-ordina(clienti[2]!, prodotti[1]!); // Lucia ordena Prodotto 2
-ordina(clienti[3]!, prodotti[2]!); // Marco ordena Prodotto 3
-ordina(clienti[4]!, prodotti[2]!); // Giulia intenta el mismo producto
+// ---ordini
+ordina(clienti[0]!, prodotti[0]!);
+ordina(clienti[1]!, prodotti[0]!);
+ordina(clienti[2]!, prodotti[1]!);
+ordina(clienti[3]!, prodotti[2]!);
+ordina(clienti[4]!, prodotti[2]!);
 
-// --- Mostrar estado final de todos los productos ---
+// --- Stato prodotti
 console.log("\nStato finale dei prodotti:");
 prodotti.forEach((p) =>
   console.log(`Prodotto ${p.id} (${p.tipo}): ${p.stato}`),
 );
 
-// --- Mostrar productos en cada proceso ---
+// ---Pordotti in processo
 console.log("\nProdotti per processo:");
 processi.forEach((proc, index) => {
   console.log(
