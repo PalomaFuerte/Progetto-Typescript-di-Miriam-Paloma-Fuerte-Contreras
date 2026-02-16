@@ -3,7 +3,7 @@ import { Cliente } from "./models/Cliente";
 import { ProcessoProduzione } from "./models/ProcessoProduzione";
 import { metodoPagamento, tipoProdotto, Taglia, Colore } from "./enum";
 
-//Prodotti
+// Prodotti
 const prodotti: Prodotto[] = [
   new Prodotto(tipoProdotto.costume, 1, Taglia.S, Colore.rosso),
   new Prodotto(tipoProdotto.pareo, 2, Taglia.M, Colore.blu),
@@ -11,7 +11,7 @@ const prodotti: Prodotto[] = [
   new Prodotto(tipoProdotto.ciabatte, 4, Taglia.L, Colore.verde),
 ];
 
-//Clienti
+// Clienti
 const clienti: Cliente[] = [
   new Cliente(
     "Paloma",
@@ -30,7 +30,7 @@ const clienti: Cliente[] = [
   new Cliente("Giulia", "Neri", "giulia@gmail.com", metodoPagamento.applepay),
 ];
 
-//Processi
+// Processi
 const processi: ProcessoProduzione[] = [
   new ProcessoProduzione(
     "Fusione e trasformazione in filato",
@@ -42,21 +42,26 @@ const processi: ProcessoProduzione[] = [
   ),
 ];
 
-// asseganzione
+// Assegnazione prodotti ai processi
+
+// Sicuro: array creato con elementi già definiti, non può essere vuoto
 try {
-  processi[0]!.aggiungiProdotto(prodotti[0]!); // Prodotto 1 al proceso 1
+  processi[0]!.aggiungiProdotto(prodotti[0]!); // Prodotto 1 al processo 1
 } catch (error) {
-  console.log((error as Error).message);
+  const err = error instanceof Error ? error : new Error(String(error));
+  console.log(err.message);
 }
 
+// Sicuro: array creato con elementi già definiti, non può essere vuoto
 try {
-  processi[1]!.aggiungiProdotto(prodotti[1]!); // Prodotto 2 al proceso 2
-  processi[1]!.aggiungiProdotto(prodotti[2]!); // Prodotto 3 al proceso 2
+  processi[1]!.aggiungiProdotto(prodotti[1]!); // Prodotto 2 al processo 2
+  processi[1]!.aggiungiProdotto(prodotti[2]!); // Prodotto 3 al processo 2
 } catch (error) {
-  console.log((error as Error).message);
+  const err = error instanceof Error ? error : new Error(String(error));
+  console.log(err.message);
 }
 
-// --- errore
+// Funzione per ordinare prodotti
 function ordina(cliente: Cliente, prodotto: Prodotto): void {
   try {
     cliente.ordinaProdotto(prodotto);
@@ -64,26 +69,25 @@ function ordina(cliente: Cliente, prodotto: Prodotto): void {
       `${cliente.nome} ha ordinato il prodotto ${prodotto.id} (${prodotto.tipo})`,
     );
   } catch (error) {
-    console.log(
-      `Ordine fallito per ${cliente.nome}: ${(error as Error).message}`,
-    );
+    const err = error instanceof Error ? error : new Error(String(error));
+    console.log(`Ordine fallito per ${cliente.nome}: ${err.message}`);
   }
 }
 
-// ---ordini
+// Ordini
 ordina(clienti[0]!, prodotti[0]!);
 ordina(clienti[1]!, prodotti[0]!);
 ordina(clienti[2]!, prodotti[1]!);
 ordina(clienti[3]!, prodotti[2]!);
 ordina(clienti[4]!, prodotti[2]!);
 
-// --- Stato prodotti
+// Stato finale dei prodotti
 console.log("\nStato finale dei prodotti:");
 prodotti.forEach((p) =>
   console.log(`Prodotto ${p.id} (${p.tipo}): ${p.stato}`),
 );
 
-// ---Pordotti in processo
+// Prodotti per processo
 console.log("\nProdotti per processo:");
 processi.forEach((proc, index) => {
   console.log(
